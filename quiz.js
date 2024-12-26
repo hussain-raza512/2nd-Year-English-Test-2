@@ -475,53 +475,55 @@ function showConfirmation() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let timerInterval;
-// function startTimer() {
-//   clearInterval(timerInterval);
-//   let secondsRemaining = 20;
+let timerInterval;
+function startTimer() {
+  clearInterval(timerInterval);
+  let secondsRemaining = 900;
   
-//   displayTime();
+  displayTime();
 
-//   timerInterval = setInterval(() => {
-//     secondsRemaining--;
-//     displayTime();
-//     if (secondsRemaining <= 0) {
-//       clearInterval(timerInterval);
-//       document.body.style.backgroundColor = "red";
-//       showScore();
-//     }
-//   }, 1000);
+  timerInterval = setInterval(() => {
+    secondsRemaining--;
+    displayTime();
+    if (secondsRemaining <= 0) {
+      clearInterval(timerInterval);
+      document.body.style.backgroundColor = "red";
+      showScore();
+    }
+  }, 1000);
 
-//   function displayTime() {
-//     const minutes = Math.floor(secondsRemaining / 60);
-//     const seconds = secondsRemaining % 60;
-//     document.getElementById('timer').innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-//   }
-// }
+  function displayTime() {
+    const minutes = Math.floor(secondsRemaining / 60);
+    const seconds = secondsRemaining % 60;
+    document.getElementById('timer').innerHTML = `Remaining Time = <span style="color: red;">${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</span>`;
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
